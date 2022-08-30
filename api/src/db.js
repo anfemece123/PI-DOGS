@@ -32,8 +32,8 @@ sequelize.models = Object.fromEntries(capsEntries);
 // Para relacionarlos hacemos un destructuring
 const { Dog,Temperament } = sequelize.models;
 
-Temperament.belongsToMany(Dog, {through: "temperaments_dogs"});//? CREACION DE LA TABLA INTERMEDIA 
-Dog.belongsToMany(Temperament, {through: "temperaments_dogs"});//!una raza de perro puede tener varios "temperamentos" en simultaneo y, a su vez, un "temperamento" puede corresponder a múltiples razas de perro distintas
+Temperament.belongsToMany(Dog, {through: "temperaments_dogs"});//& CREACION DE LA TABLA INTERMEDIA 
+Dog.belongsToMany(Temperament, {through: "temperaments_dogs"});//&una raza de perro puede tener varios "temperamentos" en simultaneo y, a su vez, un "temperamento" puede corresponder a múltiples razas de perro distintas
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

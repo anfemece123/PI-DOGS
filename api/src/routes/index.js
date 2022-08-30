@@ -28,9 +28,9 @@ const getDbInfo= async()=>{
         include:{
             model: Temperament,
             atributes:['name'],
-            through:{
-                atributes:[],//!==============================================================================
-            },
+            // through:{
+            //     atributes:[],//!==============================================================================
+            // },
         }
     })
 }
@@ -55,10 +55,10 @@ router.get('/dogs', async (req,res)=>{
     }
 })
 
-router.get('/temperaments',async (req,res)=>{
-    const temperamentosApi= await axios.get(`https://api.thedogapi.com/v1/breeds`)
-    const temperamentos = temperamentosApi.data.map(el=>el.temperament)
+// router.get('/temperaments',async (req,res)=>{
+//     const temperamentosApi= await axios.get(`https://api.thedogapi.com/v1/breeds`)
+//     const temperamentos = temperamentosApi.data.map(el=>el.temperament)
 
-})
+// })
 
 module.exports = router;
